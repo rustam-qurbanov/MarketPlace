@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <section>
+        <div class="container">
+          <div class="logo">
+            <a href="#">
+              <img src="../public/images/logo-colored.svg" alt="logo_brand" />
+            </a>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control"
+              style="width: 55%"
+              placeholder="Search"
+            />
+
+            <!-- <select class="form-select">
+              <option value="">All type</option>
+              <option value="">Special</option>
+              <option value="">Only best</option>
+              <option value="">Lates</option>
+            </select> -->
+
+            <!-- <div class="dropdown">
+              <button class="form-select">Dropdown</button>
+              <div class="dropdown-content">
+                <a href="#">All type</a>
+                <a href="#">Special</a>
+                <a href="#">Only best</a>
+                <a href="#">Lates</a>
+              </div>
+            </div> -->
+
+            <div class="dropdown">
+              <button class="dropbtn" id="dropdownButton">
+                <span id="selectedLink">All type</span>
+                <img id="arrow-icon" src="/public/icons/expand-more.svg" alt="more">
+              </button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#" onclick="changeButtonText(event)">All type</a>
+                <a href="#" onclick="changeButtonText(event)">Special</a>
+                <a href="#" onclick="changeButtonText(event)">Only best</a>
+                <a href="#" onclick="changeButtonText(event)">Lates</a>
+              </div>
+            </div>
+
+            <a class="btn" href="#">Search</a>
+          </div>
+
+          <div class="icons">
+            <div class="icon">
+              <img src="/public/icons/profile.svg" alt="profile" />
+              <p>Profile</p>
+            </div>
+            <div class="icon">
+              <img src="/public/icons/message.svg" alt="message" />
+              <p>Message</p>
+            </div>
+            <div class="icon">
+              <img src="/public/icons/orders.svg" alt="orders" />
+              <p>Orders</p>
+            </div>
+            <div class="icon">
+              <img src="/public/icons/cart.svg" alt="my-cart" />
+              <p>Cart</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <nav></nav>
+    </header>
+
+    <script src="script.js"></script>
+  </body>
+</html>
