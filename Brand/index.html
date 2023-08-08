@@ -24,26 +24,10 @@
               placeholder="Search"
             />
 
-            <!-- <select class="form-select">
-              <option value="">All type</option>
-              <option value="">Special</option>
-              <option value="">Only best</option>
-              <option value="">Lates</option>
-            </select> -->
-
-            <!-- <div class="dropdown">
-              <button class="form-select">Dropdown</button>
-              <div class="dropdown-content">
-                <a href="#">All type</a>
-                <a href="#">Special</a>
-                <a href="#">Only best</a>
-                <a href="#">Lates</a>
-              </div>
-            </div> -->
-
             <div class="dropdown">
               <button class="dropbtn" id="dropdownButton">
                 <span id="selectedLink">All type</span>
+                <!-- <span class="selectedLink">All type</span> -->
                 <img id="arrow-icon" src="/public/icons/expand-more.svg" alt="more">
               </button>
               <div id="myDropdown" class="dropdown-content">
@@ -54,7 +38,20 @@
               </div>
             </div>
 
-            <a class="btn" href="#">Search</a>
+            <!-- <div class="dropdown">
+              <button class="dropbtn" class="dropdownButton">
+                <span class="selectedLink">All type</span>
+                <img class="arrow-icon" src="/public/icons/expand-more.svg" alt="more">
+              </button>
+              <div class="myDropdown" class="dropdown-content">
+                <a href="#" onclick="changeButtonText(event)">All type</a>
+                <a href="#" onclick="changeButtonText(event)">Special</a>
+                <a href="#" onclick="changeButtonText(event)">Only best</a>
+                <a href="#" onclick="changeButtonText(event)">Lates</a>
+              </div>
+            </div> -->
+
+            <a class="search_btn" href="#">Search</a>
           </div>
 
           <div class="icons">
@@ -78,7 +75,63 @@
         </div>
       </section>
 
-      <nav></nav>
+      <nav>
+        <div class="container">
+          <div class="navbar">
+
+            <ul class="navbar-left">
+              <li class="navbar-left-item">
+                <a class="triangle" href="#">All category</a>
+              </li>
+              <li class="navbar-left-item">
+                <a class="triangle" href="#">Pages</a>
+              </li>
+              <li class="navbar-left-item">
+                <a href="#">Services</a>
+              </li>
+              <li class="navbar-left-item">
+                <a href="#">Projects</a>
+              </li>
+              <li class="navbar-left-item">
+                <a href="#">About</a>
+              </li>
+              <li class="navbar-left-item">
+                <a href="#">Help</a>
+              </li>
+            </ul>
+
+            <ul class="navbar-right">
+              <li class="navbar-right-item">
+
+                <div class="dropdownX">
+                  <button class="dropbtnX dropbtn" id="dropdownButton">
+                    <span class="triangle" id="selectedLink">USD</span>
+                  </button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#" onclick="changeButtonText(event)">RUB</a>
+                    <a href="#" onclick="changeButtonText(event)">AZN</a>
+                  </div>
+                </div>
+
+              </li>
+              <li class="navbar-right-item">
+
+                <div class="dropdown">
+                  <button onclick="toggleDropdown('.dropdown-content-2')" class="dropbtnX dropbtn">
+                    <span class="selectedLink triangle">ENG</span>
+                  </button>
+                  <div class="dropdown-content dropdown-content-2">
+                    <a href="#" onclick="changeButtonText(event, '.dropdown-content-2')">RU</a>
+                    <a href="#" onclick="changeButtonText(event, '.dropdown-content-2')">AZE</a>
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
     </header>
 
     <script src="script.js"></script>

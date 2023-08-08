@@ -25,7 +25,15 @@ window.onload = function () {
     // Переключаем класс "show" для выпадающего меню, что делает его видимым или скрытым в зависимости от текущего состояния
     dropdownContent.classList.toggle("show");
   
-    // Находим иконку по её id
+  //    // Находим иконку по её id
+  //    var icon = document.getElementById("icon");
+  //    // Поворачиваем иконку при каждом клике на кнопку "dropdownButton"
+  //    // Проверяем текущий угол поворота и переключаем его на противоположный
+  //    if (icon.style.transform === 'rotate(180deg)') {
+  //      icon.style.transform = 'rotate(0deg)';
+  //    } else {
+  //      icon.style.transform = 'rotate(180deg)';
+  //    }
   
     var icon = document.getElementById("arrow-icon");
     // Добавляем или удаляем класс "rotate" для применения анимации поворота
@@ -73,69 +81,30 @@ window.onload = function () {
       }
     }
   };
-
-
-
-//!
-
-//   function changeButtonText(event, contentSelector) {
-//     const clickedLinkText = event.target.textContent;
-//     const selectedLink = document.querySelector(contentSelector + " .selectedLink");
-//     selectedLink.textContent = clickedLinkText;
   
-//     const links = document.querySelectorAll(contentSelector + " a");
-//     links.forEach(function (link) {
-//       link.classList.remove("selected");
-//     });
-//     event.target.classList.add("selected");
   
-//     toggleDropdown(contentSelector);
-//   }
   
-//   window.onclick = function (event) {
-//     const dropdowns = document.querySelectorAll(".dropdown-content");
-//     dropdowns.forEach(function (dropdown) {
-//       if (!event.target.matches('.dropbtn') && !dropdown.contains(event.target)) {
-//         dropdown.classList.remove('show');
-//       }
-//     });
-//   }
-
-//!
-
-// // Ожидаем, пока весь контент загрузится
-// window.onload = function () {
-//     // Находим все элементы с классом "dropbtn" (все кнопки выпадающих меню)
-//     var dropdownButtons = document.querySelectorAll(".dropbtnX");
+  //!
   
-//     // Проходимся по каждой кнопке и добавляем обработчик клика
-//     for (var i = 0; i < dropdownButtons.length; i++) {
-//       var button = dropdownButtons[i];
-//       button.addEventListener("click", toggleDropdown);
-//     }
-//   };
-  
-//   // Функция для отображения/скрытия выпадающего меню
-//   function toggleDropdown(event) {
-//     // Находим следующий элемент после кнопки, который представляет собой выпадающее меню
-//     var dropdownContent = this.nextElementSibling;
-//     // Переключаем класс "show" для выпадающего меню, чтобы показать или скрыть его
-//     dropdownContent.classList.toggle("show");
-//   }
-
-  
-//   // Закрыть выпадающее меню, если пользователь кликает за его пределами
-//   window.onclick = function(event) {
-//     if (!event.target.matches('.dropbtn')) {
-//       var dropdowns = document.getElementsByClassName("dropdown-content");
-//       for (var i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('show')) {
-//           openDropdown.classList.remove('show');
-//         }
-//       }
-//     }
-//   };
-  
-
-  
+  //   function changeButtonText(event, contentSelector) {
+  //     const clickedLinkText = event.target.textContent;
+  //     const selectedLink = document.querySelector(contentSelector + " .selectedLink");
+  //     selectedLink.textContent = clickedLinkText;
+    
+  //     const links = document.querySelectorAll(contentSelector + " a");
+  //     links.forEach(function (link) {
+  //       link.classList.remove("selected");
+  //     });
+  //     event.target.classList.add("selected");
+    
+  //     toggleDropdown(contentSelector);
+  //   }
+    
+  //   window.onclick = function (event) {
+  //     const dropdowns = document.querySelectorAll(".dropdown-content");
+  //     dropdowns.forEach(function (dropdown) {
+  //       if (!event.target.matches('.dropbtn') && !dropdown.contains(event.target)) {
+  //         dropdown.classList.remove('show');
+  //       }
+  //     });
+  //   }
