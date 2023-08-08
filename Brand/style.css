@@ -5,9 +5,17 @@
   font-size: 16px;
 }
 
+header {
+  padding-top: 2rem;
+  background-color: white;
+}
+body {
+  background-color: #F7FAFC;
+}
+
 .container {
   display: flex;
-  margin: 30px auto;
+  margin: 0 auto;
   justify-content: space-between;
   width: 80%;
 }
@@ -36,29 +44,15 @@
   color: #565656;
   background-color: #f9f9f9;
   border: 1px solid #dee2e6;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
 
   width: 26.3rem;
   height: 2.5rem;
   flex-shrink: 0;
 }
 
-/* .form-select {
-  padding: 0.43rem 1.84rem 0.43rem 0.84rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: #565656;
-  background-color: #f9f9f9;
-  border: 1px solid #dee2e6;
-
-  width: 9rem;
-  height: 2.5rem;
-  flex-shrink: 0;
-} */
-
-
-
-.btn {
+.search_btn {
   color: #fff;
   background-color: #0d6efd;
   text-decoration: none;
@@ -83,8 +77,6 @@
   text-align: center;
 }
 
-
-
 .dropdown {
   position: relative;
   display: inline-block;
@@ -102,16 +94,11 @@
   text-align: left;
 
   width: 9rem;
-  height: 2.5rem;
+  /* height: 2.5rem; */
   flex-shrink: 0;
 
   display: flex;
   justify-content: space-between;
-
-  /* background-image: url(/public/icons/expand-more.svg);
-  background-repeat: no-repeat;
-  background-position: right 0.84rem center; */
-  /* transform: scaleX(-1); */
 }
 #arrow-icon {
   transition: transform 0.3s ease;
@@ -119,7 +106,6 @@
 .rotate {
   transform: rotate(180deg);
 }
-  
 
 /* Стили для отображения выпадающего меню */
 .dropdown-content {
@@ -127,7 +113,9 @@
   position: absolute;
   background-color: #f9f9f9;
   min-width: 9rem;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-top: 0.3rem;
+  border-radius: 1rem;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
   font-family: Inter;
@@ -141,26 +129,78 @@
   text-decoration: none;
   display: block;
 }
-
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 1rem;
+}
 
 .dropdown-content .selected:hover {
   background-color: #0d6efd;
 }
-
+.selected {
+  background-color: #0d6efd;
+  color: #fff !important;
+  border-radius: 1rem;
+}
 
 .show {
   display: block;
 }
 
-.selected {
-  background-color: #0d6efd;
-  color: #fff !important;
+
+
+.triangle {
+  position: relative;
+  padding-right: 15px; /* Оставляем место для треугольника */
 }
 
+.triangle::after {
+  content: "";
+  position: absolute;
+  top: 30%; /* Располагаем в вертикальном центре */
+  right: 0; /* Располагаем справа от элемента */
+  /* transform: translateY(-20%); Корректируем позицию по вертикали */
+  border-left: 5px solid black; /* Создаем черный треугольник */
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transform: rotate(90deg);
+}
 
+nav {
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  margin-top: 1rem;
 
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  font-family: Inter;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.navbar li {
+  padding: 0.5rem 0.8rem;
+ 
+}
+.navbar li a {
+  text-decoration: none;
+  color: black;
 
+}
 
-
-
+.navbar-right li {
+   padding-right: 0;
+}
+.navbar-right .dropbtnX {
+  background-color: transparent;
+  color: black;
+  border: none;
+  width: 4rem;
+}
