@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
+  font-family: Inter;
 }
 
 header {
@@ -107,7 +108,7 @@ body {
   transform: rotate(180deg);
 }
 
-/* Стили для отображения выпадающего меню */
+/* Стили для отображения выпадающего меню search  */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -118,7 +119,6 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
-  font-family: Inter;
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -151,14 +151,14 @@ body {
 
 .triangle {
   position: relative;
-  padding-right: 15px; /* Оставляем место для треугольника */
+  padding-right: 1rem; 
 }
 
 .triangle::after {
   content: "";
   position: absolute;
-  top: 30%; /* Располагаем в вертикальном центре */
-  right: 0; /* Располагаем справа от элемента */
+  top: 20%; 
+  right: 0; 
   /* transform: translateY(-20%); Корректируем позицию по вертикали */
   border-left: 5px solid black; /* Создаем черный треугольник */
   border-top: 5px solid transparent;
@@ -170,6 +170,7 @@ nav {
   border-top: 1px solid #dee2e6;
   border-bottom: 1px solid #dee2e6;
   margin-top: 1rem;
+  padding: 1rem 0;
 
 }
 .navbar {
@@ -198,9 +199,55 @@ nav {
 .navbar-right li {
    padding-right: 0;
 }
-.navbar-right .dropbtnX {
+.navbar-right-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+
+}
+
+
+/* Стили для отображения выпадающего меню */
+.drop {
+  position: relative;
+  display: inline-block;
+
+}
+
+.drop-button {
+  cursor: pointer;
   background-color: transparent;
   color: black;
   border: none;
-  width: 4rem;
+
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 9rem;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 1rem;
+  transform: translateX(-70%);
+}
+
+.drop-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.drop-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 1rem;
+
+}
+.show {
+  display: block;
 }
