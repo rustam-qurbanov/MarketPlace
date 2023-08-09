@@ -1,4 +1,4 @@
-
+//! dropdown for input search
 
 // Функция, которая срабатывает при загрузке страницы
 window.onload = function () {
@@ -73,69 +73,46 @@ window.onload = function () {
       }
     }
   };
-
-
-
-//!
-
-//   function changeButtonText(event, contentSelector) {
-//     const clickedLinkText = event.target.textContent;
-//     const selectedLink = document.querySelector(contentSelector + " .selectedLink");
-//     selectedLink.textContent = clickedLinkText;
-  
-//     const links = document.querySelectorAll(contentSelector + " a");
-//     links.forEach(function (link) {
-//       link.classList.remove("selected");
-//     });
-//     event.target.classList.add("selected");
-  
-//     toggleDropdown(contentSelector);
-//   }
-  
-//   window.onclick = function (event) {
-//     const dropdowns = document.querySelectorAll(".dropdown-content");
-//     dropdowns.forEach(function (dropdown) {
-//       if (!event.target.matches('.dropbtn') && !dropdown.contains(event.target)) {
-//         dropdown.classList.remove('show');
-//       }
-//     });
-//   }
-
-//!
-
-// // Ожидаем, пока весь контент загрузится
-// window.onload = function () {
-//     // Находим все элементы с классом "dropbtn" (все кнопки выпадающих меню)
-//     var dropdownButtons = document.querySelectorAll(".dropbtnX");
-  
-//     // Проходимся по каждой кнопке и добавляем обработчик клика
-//     for (var i = 0; i < dropdownButtons.length; i++) {
-//       var button = dropdownButtons[i];
-//       button.addEventListener("click", toggleDropdown);
-//     }
-//   };
-  
-//   // Функция для отображения/скрытия выпадающего меню
-//   function toggleDropdown(event) {
-//     // Находим следующий элемент после кнопки, который представляет собой выпадающее меню
-//     var dropdownContent = this.nextElementSibling;
-//     // Переключаем класс "show" для выпадающего меню, чтобы показать или скрыть его
-//     dropdownContent.classList.toggle("show");
-//   }
-
-  
-//   // Закрыть выпадающее меню, если пользователь кликает за его пределами
-//   window.onclick = function(event) {
-//     if (!event.target.matches('.dropbtn')) {
-//       var dropdowns = document.getElementsByClassName("dropdown-content");
-//       for (var i = 0; i < dropdowns.length; i++) {
-//         var openDropdown = dropdowns[i];
-//         if (openDropdown.classList.contains('show')) {
-//           openDropdown.classList.remove('show');
-//         }
-//       }
-//     }
-//   };
   
 
+//! dropdown for navbar language
+  
+  // Универсальная функция для инициализации выпадающего меню
+function initializeDropdown(dropdownSelector) {
+    // Выбираем все элементы с указанным селектором
+    const dropdowns = document.querySelectorAll(dropdownSelector);
+  
+    // Для каждого элемента с выпадающим меню выполняем следующие действия
+    dropdowns.forEach(dropdown => {
+      // Получаем кнопку и контент меню
+      const dropdownButton = dropdown.querySelector('.drop-button');
+      const dropdownContent = dropdown.querySelector('.drop-content');
+      // Получаем все опции меню
+      const dropdownOptions = dropdown.querySelectorAll('.drop-content a');
+  
+      // Добавляем обработчик события для открытия/закрытия меню по клику на кнопку
+      dropdownButton.addEventListener('click', () => {
+        dropdownContent.classList.toggle('show'); // Переключаем класс для показа/скрытия меню
+      });
+  
+      // Добавляем обработчик события для выбора опции и закрытия меню
+      dropdownOptions.forEach(option => {
+        option.addEventListener('click', () => {
+          dropdownButton.textContent = option.textContent; // Обновляем текст кнопки
+          dropdownContent.classList.remove('show'); // Скрываем меню
+        });
+      });
+  
+      // Добавляем обработчик события для закрытия меню при клике вне его
+      window.addEventListener('click', (event) => {
+        // Проверяем, не кликнули ли на кнопку меню
+        if (!dropdown.contains(event.target)) {
+          dropdownContent.classList.remove('show'); // Скрываем меню
+        }
+      });
+    });
+  }
+  
+  // Инициализация выпадающих меню на странице
+  initializeDropdown('.drop');
   
