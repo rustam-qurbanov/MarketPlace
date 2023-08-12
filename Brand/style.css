@@ -182,8 +182,6 @@ nav {
 .navbar ul {
   list-style: none;
   display: flex;
-  font-family: Inter;
-  font-size: 1rem;
   font-weight: 500;
 }
 .navbar li {
@@ -211,13 +209,13 @@ nav {
 
 
 /* Стили для отображения выпадающего меню */
-.drop {
+.drop , .drop-box {
   position: relative;
   display: inline-block;
 
 }
 
-.drop-button {
+.drop-button , .drop-box-button {
   cursor: pointer;
   background-color: transparent;
   color: black;
@@ -225,29 +223,62 @@ nav {
 
 }
 
-.drop-content {
+
+.drop-content , .content-box {
   display: none;
   position: absolute;
+  z-index: 1;
+}
+.translateX {
+  transform: translateX(-70%);
+}
+.drop-content-style {
   background-color: #f9f9f9;
   min-width: 9rem;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
   border-radius: 1rem;
-  transform: translateX(-70%);
 }
 
-.drop-content a {
+.drop-content-style a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.drop-content a:hover {
+.drop-content-style a:hover {
   background-color: #f1f1f1;
   border-radius: 1rem;
 
 }
 .show {
   display: block;
+}
+
+
+
+.drop-box .content-box-style {
+  width: 35rem;
+  display: flex;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 1rem;
+}
+.drop-box .content-box h6 {
+  margin-top: 0.6rem;
+}
+.drop-box .content-box .content-list {
+  display: flex;
+  flex-direction: column;
+}
+.drop-box .content-box .content-list li {
+  padding: 0.2rem 0.8rem 0.3rem 0;
+}
+.drop-box .content-box .content-list .text-body{
+  color: #565656;
+}
+.drop-box .content-box .content-list .text-body:hover {
+  text-decoration: underline;
+  color: #565656;
 }

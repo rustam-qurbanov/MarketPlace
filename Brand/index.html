@@ -27,7 +27,6 @@
             <div class="dropdown">
               <button class="dropbtn" id="dropdownButton">
                 <span id="selectedLink">All type</span>
-                <!-- <span class="selectedLink">All type</span> -->
                 <img id="arrow-icon" src="/public/icons/expand-more.svg" alt="more">
               </button>
               <div id="myDropdown" class="dropdown-content">
@@ -37,19 +36,6 @@
                 <a href="#" onclick="changeButtonText(event)">Lates</a>
               </div>
             </div>
-
-            <!-- <div class="dropdown">
-              <button class="dropbtn" class="dropdownButton">
-                <span class="selectedLink">All type</span>
-                <img class="arrow-icon" src="/public/icons/expand-more.svg" alt="more">
-              </button>
-              <div class="myDropdown" class="dropdown-content">
-                <a href="#" onclick="changeButtonText(event)">All type</a>
-                <a href="#" onclick="changeButtonText(event)">Special</a>
-                <a href="#" onclick="changeButtonText(event)">Only best</a>
-                <a href="#" onclick="changeButtonText(event)">Lates</a>
-              </div>
-            </div> -->
 
             <a class="search_btn" href="#">Search</a>
           </div>
@@ -81,10 +67,82 @@
 
             <ul class="navbar-left">
               <li class="navbar-left-item">
-                <a class="triangle" href="#">All category</a>
+                <!-- <a class="triangle" href="#">All category</a> -->
+
+                  <div class="drop-box">
+                    <button class="drop-box-button triangle dropdown-button">All category</button>
+                    <div class="content-box">
+                        <div class="content-box content-box-style">
+
+                        <div style="width: 12rem">
+                        
+                          <h6>Ads website</h6>
+                          <ul class="content-list">
+                            <li><a class="text-body" href="#"> Ads home </a> </li>
+                            <li><a class="text-body" href="#"> Ads listing </a> </li>
+                            <li><a class="text-body" href="#"> Ads detail </a> </li>
+                          </ul>
+          
+                          <h6>Techstore</h6>
+                          <ul class="content-list">
+                            <li><a class="text-body" href="#"> Main page </a> </li>
+                            <li><a class="text-body" href="#"> Listing view </a> </li>
+                            <li><a class="text-body" href="#"> Item details </a> </li>
+                          </ul>
+          
+                        </div>
+                        <div style="width: 12rem">
+                          
+                          <h6>Marketplace</h6>
+                          <ul class="content-list">
+                            <li><a class="text-body" href="#"> Main page </a> </li>
+                            <li><a class="text-body" href="#"> Listing view </a> </li>
+                            <li><a class="text-body" href="#"> Grid view </a> </li>
+                            <li><a class="text-body" href="#"> Item detail </a> </li>
+                            <li><a class="text-body" href="#"> Cart page </a> </li>
+                            <li><a class="text-body" href="#"> Order page </a> </li>
+                          </ul>
+          
+                        </div>
+                        <div style="width: 12rem">
+          
+                          <h6>Food order</h6>
+                          <ul class="content-list">
+                            <li><a class="text-body" href="#"> Main page </a> </li>
+                            <li><a class="text-body" href="#"> Restaurant foods </a> </li>
+                            <li><a class="text-body" href="#">  Food order </a> </li>
+                          </ul>
+          
+                          <h6>Common pages</h6>
+                          <ul class="content-list">
+                            <li><a class="text-body" href="#"> Pricing page </a> </li>
+                            <li><a class="text-body" href="#">  User profile </a> </li>
+                            <li><a class="text-body" href="#">  User register </a> </li>
+                          </ul>
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                    
+
+                  </div>
+
               </li>
               <li class="navbar-left-item">
-                <a class="triangle" href="#">Pages</a>
+
+                <div class="drop">
+                  <button class="drop-button triangle">Pages</button>
+                  <div class="drop-content drop-content-style">
+                    <a href="#">Main page</a>
+                    <a href="#">Listing view</a>
+                    <a href="#">Grid view</a>
+                    <a href="#">Detail page</a>
+                    <a href="#">Cart page</a>
+                    <a href="#">Order page</a>
+                  </div>
+                </div>
+
               </li>
               <li class="navbar-left-item">
                 <a href="#">Services</a>
@@ -105,7 +163,7 @@
 
                 <div class="drop">
                   <button class="drop-button triangle">USD</button>
-                  <div class="drop-content">
+                  <div class="drop-content drop-content-style translateX">
                     <a href="#">USD</a>
                     <a href="#">RUB</a>
                     <a href="#">AZN</a>
@@ -116,11 +174,11 @@
               <li class="navbar-right-item">
 
                 <div class="drop">
-                  <button class="drop-button triangle">ENG</button>
-                  <div class="drop-content">
-                    <a href="#">ENG</a>
+                  <button class="drop-button triangle">EN</button>
+                  <div class="drop-content drop-content-style translateX">
+                    <a href="#">EN</a>
                     <a href="#">RU</a>
-                    <a href="#">AZE</a>
+                    <a href="#">AZ</a>
                   </div>
                 </div>
 

@@ -19,8 +19,9 @@ window.onload = function () {
   
   // Функция для отображения/скрытия выпадающего меню
   function toggleDropdown(event) {
-    // Находим выпадающее меню по его идентификатору "myDropdown"
     event.stopPropagation();
+    
+    // Находим выпадающее меню по его идентификатору "myDropdown"
     var dropdownContent = document.getElementById("myDropdown");
     // Переключаем класс "show" для выпадающего меню, что делает его видимым или скрытым в зависимости от текущего состояния
     dropdownContent.classList.toggle("show");
@@ -72,6 +73,11 @@ window.onload = function () {
         }
       }
     }
+
+    // Проверяем, не кликнули ли на кнопку меню
+    if (!dropdown.contains(event.target)) {
+        dropdownContent.classList.remove('show'); // Скрываем меню
+      }
   };
   
 
@@ -115,4 +121,46 @@ function initializeDropdown(dropdownSelector) {
   
   // Инициализация выпадающих меню на странице
   initializeDropdown('.drop');
+
+
+
+  //! универсальный дроп
+  // Функция для инициализации выпадающего меню
+// Принимает селекторы для кнопки, контента меню и опций
+function initializeDropdownBox(dropdownSelector, buttonSelector, optionSelector) {
+    // Находим элемент кнопки выпадающего меню
+    const dropdownButton = document.querySelector(buttonSelector);
+    // Находим следующий элемент (контент меню) после кнопки
+    const dropdownContent = dropdownButton.nextElementSibling;
+    // Находим все опции меню по указанному селектору
+    const dropdownOptions = document.querySelectorAll(optionSelector);
   
+    // Добавляем обработчик события для открытия/закрытия меню по клику на кнопку
+    dropdownButton.addEventListener('click', () => {
+      dropdownContent.classList.toggle('show');
+    });
+  
+    // Добавляем обработчик события для выбора опции и закрытия меню
+    dropdownOptions.forEach(option => {
+      option.addEventListener('click', (event) => {
+        // // Получаем выбранное значение из текста опции
+        // const selectedValue = event.target.textContent;
+        // // Обновляем текст кнопки выпадающего меню
+        // dropdownButton.textContent = selectedValue;
+        // Скрываем меню
+        dropdownContent.classList.remove('show');
+      });
+    });
+  
+    // Добавляем обработчик события для закрытия меню при клике вне его
+    window.addEventListener('click', (event) => {
+      // Проверяем, был ли клик на кнопке меню
+      if (!event.target.matches(buttonSelector)) {
+        // Скрываем меню
+        dropdownContent.classList.remove('show');
+      }
+    });
+  }
+  
+  // Пример использования универсальной функции для разных выпадающих меню на сайте:
+  initializeDropdownBox('.drop-box', '.drop-box-button', '.text-body');
