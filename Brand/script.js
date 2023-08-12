@@ -25,9 +25,19 @@ window.onload = function () {
     var dropdownContent = document.getElementById("myDropdown");
     // Переключаем класс "show" для выпадающего меню, что делает его видимым или скрытым в зависимости от текущего состояния
     dropdownContent.classList.toggle("show");
+//* Добавляем другой контент, который должен закрываться при клике
+    var anotherContent1 = document.getElementById("drop-content1");
+    var anotherContent2 = document.getElementById("drop-content2");
+    var anotherContent3 = document.getElementById("drop-content3");
+    var anotherContent4 = document.getElementById("content-box");
+
+    anotherContent1.classList.remove("show");
+    anotherContent2.classList.remove("show");
+    anotherContent3.classList.remove("show");
+    anotherContent4.classList.remove("show");
+//*
   
     // Находим иконку по её id
-  
     var icon = document.getElementById("arrow-icon");
     // Добавляем или удаляем класс "rotate" для применения анимации поворота
     icon.classList.toggle("rotate");
