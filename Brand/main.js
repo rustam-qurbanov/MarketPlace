@@ -1,4 +1,4 @@
-
+//! dropdown for input search
 
 // Функция, которая срабатывает при загрузке страницы
 window.onload = function () {
@@ -25,15 +25,7 @@ window.onload = function () {
     // Переключаем класс "show" для выпадающего меню, что делает его видимым или скрытым в зависимости от текущего состояния
     dropdownContent.classList.toggle("show");
   
-  //    // Находим иконку по её id
-  //    var icon = document.getElementById("icon");
-  //    // Поворачиваем иконку при каждом клике на кнопку "dropdownButton"
-  //    // Проверяем текущий угол поворота и переключаем его на противоположный
-  //    if (icon.style.transform === 'rotate(180deg)') {
-  //      icon.style.transform = 'rotate(0deg)';
-  //    } else {
-  //      icon.style.transform = 'rotate(180deg)';
-  //    }
+    // Находим иконку по её id
   
     var icon = document.getElementById("arrow-icon");
     // Добавляем или удаляем класс "rotate" для применения анимации поворота
@@ -82,29 +74,44 @@ window.onload = function () {
     }
   };
   
+
+//! dropdown for navbar language
   
+  // Универсальная функция для инициализации выпадающего меню
+function initializeDropdown(dropdownSelector) {
+    // Выбираем все элементы с указанным селектором
+    const dropdowns = document.querySelectorAll(dropdownSelector);
   
-  //!
+    // Для каждого элемента с выпадающим меню выполняем следующие действия
+    dropdowns.forEach(dropdown => {
+      // Получаем кнопку и контент меню
+      const dropdownButton = dropdown.querySelector('.drop-button');
+      const dropdownContent = dropdown.querySelector('.drop-content');
+      // Получаем все опции меню
+      const dropdownOptions = dropdown.querySelectorAll('.drop-content a');
   
-  //   function changeButtonText(event, contentSelector) {
-  //     const clickedLinkText = event.target.textContent;
-  //     const selectedLink = document.querySelector(contentSelector + " .selectedLink");
-  //     selectedLink.textContent = clickedLinkText;
-    
-  //     const links = document.querySelectorAll(contentSelector + " a");
-  //     links.forEach(function (link) {
-  //       link.classList.remove("selected");
-  //     });
-  //     event.target.classList.add("selected");
-    
-  //     toggleDropdown(contentSelector);
-  //   }
-    
-  //   window.onclick = function (event) {
-  //     const dropdowns = document.querySelectorAll(".dropdown-content");
-  //     dropdowns.forEach(function (dropdown) {
-  //       if (!event.target.matches('.dropbtn') && !dropdown.contains(event.target)) {
-  //         dropdown.classList.remove('show');
-  //       }
-  //     });
-  //   }
+      // Добавляем обработчик события для открытия/закрытия меню по клику на кнопку
+      dropdownButton.addEventListener('click', () => {
+        dropdownContent.classList.toggle('show'); // Переключаем класс для показа/скрытия меню
+      });
+  
+      // Добавляем обработчик события для выбора опции и закрытия меню
+      dropdownOptions.forEach(option => {
+        option.addEventListener('click', () => {
+          dropdownButton.textContent = option.textContent; // Обновляем текст кнопки
+          dropdownContent.classList.remove('show'); // Скрываем меню
+        });
+      });
+  
+      // Добавляем обработчик события для закрытия меню при клике вне его
+      window.addEventListener('click', (event) => {
+        // Проверяем, не кликнули ли на кнопку меню
+        if (!dropdown.contains(event.target)) {
+          dropdownContent.classList.remove('show'); // Скрываем меню
+        }
+      });
+    });
+  }
+  
+  // Инициализация выпадающих меню на странице
+  initializeDropdown('.drop');
