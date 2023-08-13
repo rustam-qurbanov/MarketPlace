@@ -7,8 +7,12 @@
 }
 
 header {
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   background-color: white;
+
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 body {
   background-color: #F7FAFC;
@@ -18,7 +22,7 @@ body {
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
 }
 
 .input-group {
@@ -36,6 +40,9 @@ body {
   gap: 0.38838rem;
   flex-shrink: 0;
 }
+.logo:hover {
+  opacity: 0.8;
+}
 
 .form-control {
   padding: 0.43rem 0.84rem;
@@ -52,37 +59,16 @@ body {
   height: 2.5rem;
   flex-shrink: 0;
 }
-
-.search_btn {
-  color: #fff;
-  background-color: #0d6efd;
-  text-decoration: none;
-  padding: 0.43rem 0.84rem;
-  border-top-right-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
-
-  text-align: center;
-  width: 6.25rem;
-  height: 2.5rem;
-
-  font-family: Inter;
-  font-size: 1.1rem;
-  font-weight: 500;
+.form-control:hover {
+  border-color: #6ea8fe;
 }
 
-.icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  text-align: center;
-}
+/* Стили для отображения выпадающего меню search  */
 
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
 .dropbtn {
   padding: 0.43rem 0.84rem 0.43rem 0.84rem;
   font-size: 1rem;
@@ -97,18 +83,13 @@ body {
   width: 9rem;
   /* height: 2.5rem; */
   flex-shrink: 0;
-
   display: flex;
   justify-content: space-between;
 }
-#arrow-icon {
-  transition: transform 0.3s ease;
-}
-.rotate {
-  transform: rotate(180deg);
+.dropbtn:hover {
+  border-color: #6ea8fe;
 }
 
-/* Стили для отображения выпадающего меню search  */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -122,7 +103,6 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
 }
-
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
@@ -146,31 +126,66 @@ body {
 .show {
   display: block;
 }
-
-
-
-.triangle {
-  position: relative;
-  padding-right: 1rem; 
+#arrow-icon {
+  transition: transform 0.3s ease;
+}
+.rotate {
+  transform: rotate(180deg);
 }
 
-.triangle::after {
-  content: "";
-  position: absolute;
-  top: 20%; 
-  right: 0; 
-  /* transform: translateY(-20%); Корректируем позицию по вертикали */
-  border-left: 5px solid black; /* Создаем черный треугольник */
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  transform: rotate(90deg);
+
+.search_btn {
+  color: #fff;
+  background-color: #0d6efd;
+  text-decoration: none;
+  padding: 0.43rem 0.84rem;
+  border: 1px solid #0d6efd;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+
+  text-align: center;
+  width: 6.25rem;
+  height: 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+
+  /* transition: background-color 0.3s ease; */
 }
+.search_btn:hover {
+  /* opacity: 0.8; */
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.icon {
+  color: #6c757d;
+  cursor: pointer;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+.icons .icon:hover {
+  filter: drop-shadow(2px 2px 4px #0b5ed7);
+}
+
+
+
 
 nav {
   border-top: 1px solid #dee2e6;
   border-bottom: 1px solid #dee2e6;
   margin-top: 1rem;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 
 }
 .navbar {
@@ -205,6 +220,24 @@ nav {
 
   padding: 0.4rem 0.8rem 0.4rem 0.8rem;
 
+}
+
+
+.triangle {
+  position: relative;
+  padding-right: 1rem; 
+}
+
+.triangle::after {
+  content: "";
+  position: absolute;
+  top: 20%; 
+  right: 0; 
+  /* transform: translateY(-20%); Корректируем позицию по вертикали */
+  border-left: 5px solid black; /* Создаем черный треугольник */
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transform: rotate(90deg);
 }
 
 
@@ -282,3 +315,5 @@ nav {
   text-decoration: underline;
   color: #565656;
 }
+
+/* Header end  */
