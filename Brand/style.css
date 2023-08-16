@@ -175,7 +175,9 @@ body {
   align-items: center; */
 }
 .icons .icon:hover {
-  filter: drop-shadow(2px 2px 4px #0b5ed7);
+  filter: drop-shadow(0 0 10px #0b5ed7);
+  /* filter: drop-shadow(10px 10px 10px #0b5ed7); */
+
 }
 
 
@@ -201,12 +203,13 @@ nav {
 }
 .navbar li {
   padding: 0.5rem 0.8rem;
- 
 }
 .navbar li a {
   text-decoration: none;
   color: black;
-
+}
+.navbar li:hover {
+  filter: drop-shadow(0 0 10px #565656);
 }
 
 .navbar-right li {
