@@ -1,3 +1,5 @@
+@import url("/Brand/universal.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +17,7 @@ header {
   width: 100%;
 }
 body {
-  background-color: #F7FAFC;
+  background-color: #f7fafc;
 }
 
 .container {
@@ -133,7 +135,6 @@ body {
   transform: rotate(180deg);
 }
 
-
 .search_btn {
   color: #fff;
   background-color: #0d6efd;
@@ -157,7 +158,6 @@ body {
   border-color: #0a58ca;
 }
 
-
 .icons {
   display: flex;
   justify-content: center;
@@ -177,18 +177,13 @@ body {
 .icons .icon:hover {
   filter: drop-shadow(0 0 10px #0b5ed7);
   /* filter: drop-shadow(10px 10px 10px #0b5ed7); */
-
 }
 
-
-
-
-nav {
+header > nav {
   border-top: 1px solid #dee2e6;
   border-bottom: 1px solid #dee2e6;
   margin-top: 1rem;
   padding: 0.8rem 0;
-
 }
 .navbar {
   width: 100%;
@@ -213,7 +208,7 @@ nav {
 }
 
 .navbar-right li {
-   padding-right: 0;
+  padding-right: 0;
 }
 .navbar-right-item {
   display: flex;
@@ -222,20 +217,18 @@ nav {
   width: 4rem;
 
   padding: 0.4rem 0.8rem 0.4rem 0.8rem;
-
 }
-
 
 .triangle {
   position: relative;
-  padding-right: 1rem; 
+  padding-right: 1rem;
 }
 
 .triangle::after {
   content: "";
   position: absolute;
-  top: 20%; 
-  right: 0; 
+  top: 20%;
+  right: 0;
   /* transform: translateY(-20%); Корректируем позицию по вертикали */
   border-left: 5px solid black; /* Создаем черный треугольник */
   border-top: 5px solid transparent;
@@ -243,24 +236,23 @@ nav {
   transform: rotate(90deg);
 }
 
-
 /* Стили для отображения выпадающего меню */
-.drop , .drop-box {
+.drop,
+.drop-box {
   position: relative;
   display: inline-block;
-
 }
 
-.drop-button , .drop-box-button {
+.drop-button,
+.drop-box-button {
   cursor: pointer;
   background-color: transparent;
   color: black;
   border: none;
-
 }
 
-
-.drop-content , .content-box {
+.drop-content,
+.content-box {
   display: none;
   position: absolute;
   z-index: 1;
@@ -271,7 +263,7 @@ nav {
 .drop-content-style {
   background-color: #f9f9f9;
   min-width: 9rem;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
 }
 
@@ -285,20 +277,17 @@ nav {
 .drop-content-style a:hover {
   background-color: #f1f1f1;
   border-radius: 1rem;
-
 }
 .show {
   display: block;
 }
-
-
 
 .drop-box .content-box-style {
   width: 35rem;
   display: flex;
   padding: 1rem;
   background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
 }
 .drop-box .content-box h6 {
@@ -311,7 +300,7 @@ nav {
 .drop-box .content-box .content-list li {
   padding: 0.2rem 0.8rem 0.3rem 0;
 }
-.drop-box .content-box .content-list .text-body{
+.drop-box .content-box .content-list .text-body {
   color: #565656;
 }
 .drop-box .content-box .content-list .text-body:hover {
@@ -320,3 +309,94 @@ nav {
 }
 
 /* Header end  */
+
+/* Section Slider  */
+
+.section-slider {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid rgba(86, 86, 86, 0.12);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.section-slider nav {
+  width: 25%;
+}
+.section-slider nav ul {
+  width: 100%;
+  color: #565656;
+}
+.section-slider nav li {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 1rem;
+}
+.section-slider nav li:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.slider {
+  width: 55%;
+  height: 90%;
+}
+.slider .slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 2rem 4rem;
+  background-size: cover;
+  background-position: center;
+}
+.slider .slide1 {
+  background-image: url(/public/images/slider-bg1.png);
+}
+.slider .slide2 {
+  background-image: url(/public/images/slider-bg2.jpg);
+}
+
+.slider .slide-item {
+  position: absolute;
+  z-index: 1;
+}
+.slider .slide-item h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.slider .slide-item h2 span {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.slider .slide-item a {
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  color: white;
+  background-color: #ff8100;
+
+  font-weight: 400;
+  line-height: 1.4;
+}
+.slider .slide-item a:hover {
+  background-color: #c96a26;
+}
+
+.slider-right {
+  width: 20%;
+  height: 100%;
+  gap: 1rem;
+}
+.slider-right-item {
+  width: 100%;
+  height: 30%;
+  border-radius: 0.5rem;
+}
+.slider-right .item1 {
+  background-color: #e3f0ff;
+}
+.slider-right .item2 {
+  background-color: #f38332;
+}
+.slider-right .item3 {
+  background-color: #55bdc3;
+}
