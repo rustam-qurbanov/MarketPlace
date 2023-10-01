@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
       <section>
-        <div class="container">
+        <div class="container row-space-between">
           <div class="logo">
             <a href="#">
               <img src="../public/images/logo-colored.svg" alt="logo_brand" />
@@ -249,7 +252,7 @@
 
           <div class="slider">
 
-            <div class="slide slide1 ">
+            <!-- <div class="slide slide1 ">
               <div class="slide-item">
                 <h2>Latest trending
                   <br> 
@@ -274,12 +277,22 @@
                 <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
               </svg>
             </div>
-            
+
             <div class="next-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#fff">
                 <path xmlns="http://www.w3.org/2000/svg" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
               </svg>
+            </div> -->
+
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/public/images/slider-bg1.png"></div>
+                <div class="swiper-slide"><img src="/public/images/slider-bg2.jpg"></div>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
 
           </div>
 
@@ -306,6 +319,9 @@
 
           </div>
         </section>
+
+        
+
 
       </div>
     </main>
