@@ -15,15 +15,14 @@ header {
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 100;
 }
 body {
   background-color: #f7fafc;
 }
 
 .container {
-  display: flex;
   margin: 0 auto;
-  justify-content: space-between;
   width: 85%;
 }
 
@@ -305,8 +304,6 @@ header > nav {
 
 /* Header end  */
 
-
-
 /* Section Slider  */
 
 .section-slider {
@@ -335,14 +332,15 @@ header > nav {
 
 .slider {
   width: 55%;
-  height: 90%;
+  height: 21rem;
   /* padding: 1rem; */
   position: relative;
 }
 
-.prev-icon , .next-icon {
+.prev-icon,
+.next-icon {
   position: absolute;
-  top: 50%;
+  top: 45%;
   width: 2rem;
   cursor: pointer;
   transition: 0.3s;
@@ -350,11 +348,11 @@ header > nav {
 .next-icon {
   right: 0;
 }
-.prev-icon:hover , .next-icon:hover {
+.prev-icon:hover,
+.next-icon:hover {
   transform: scale(120%);
   filter: drop-shadow(0 0 5px #565656);
 }
-
 
 .slider .slide {
   width: 100%;
@@ -373,7 +371,7 @@ header > nav {
 
 .slider .slide-item {
   position: absolute;
-  /* z-index: 1; */
+  z-index: 1;
 }
 .slider .slide-item h2 {
   font-size: 1.8rem;
@@ -396,7 +394,6 @@ header > nav {
 .slider .slide-item a:hover {
   background-color: #c96a26;
   filter: drop-shadow(0 0 5px #c96a26);
-
 }
 
 .slider-right {
@@ -413,7 +410,6 @@ header > nav {
 .slider-right .item1 {
   background-color: #e3f0ff;
   color: #565656;
-
 }
 .slider-right .item2 {
   background-color: #f38332;
@@ -424,20 +420,17 @@ header > nav {
   color: white;
 }
 
-
 .slider-right .item1 a {
   display: block;
-  background-color: #127FFF;
+  background-color: #127fff;
   color: white;
   margin-top: 0.5rem;
   padding: 0.3rem 4rem;
   border-radius: 0.5rem;
 }
 .slider-right .item1 a:hover {
-  background-color: #0067FF;
-
+  background-color: #f6faff;
 }
-
 
 .slider-right .item2 a {
   display: block;
@@ -458,3 +451,34 @@ header > nav {
   text-decoration: underline;
 }
 
+/* swiper */
+
+.swiper {
+  /* width: 1000px; */
+  height: 100%;
+  color: white;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background-color: aliceblue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  width: 100%;
+  /* width: 58%; */
+  object-fit: cover;
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  /* right: 140px !important;  */
+  color: white;
+  left: auto;
+}
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  /* left: 140px !important;  */
+  right: auto;
+}
